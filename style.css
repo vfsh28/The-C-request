@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #07100d;
+  color: #e8fff3;
+  font-family: "Courier New", monospace;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.screen.active {
+  display: block;
+}
