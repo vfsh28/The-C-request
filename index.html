@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight TR894</title>
+  </head>
+  <div class="app">
+
+  <!-- SCREEN 1 -->
+  <section class="screen active" id="screen1">
+    <div class="tiny">BIRTHDAY OPERATIONS SYSTEM</div>
+    <div class="plane">✈</div>
+
+    <h1>FLIGHT TR894</h1>
+    <p class="subtitle">BIRTHDAY MISSION</p>
+
+    <div class="line"></div>
+
+    <p>CREW AUTHENTICATION REQUIRED</p>
+
+    <div class="crew-card">
+      <span>RANK</span>
+      <strong>FIRST OFFICER ✓</strong>
+
+      <span>NAME</span>
+      <strong>FO MALCOLM</strong>
+
+      <span>DATE</span>
+      <strong>27 OCT 2026</strong>
+    </div>
+
+    <button onclick="nextScreen(2)">VERIFY CREW</button>
+  </section>
+
+
+  <!-- SCREEN 2 -->
+  <section class="screen" id="screen2">
+    <div class="status">✓ IDENTITY VERIFIED</div>
+
+    <h2>WELCOME ABOARD,<br>FO MALCOLM.</h2>
+
+    <p>
+      Pre-flight checks are required before
+      birthday clearance can be issued.
+    </p>
+
+    <button onclick="nextScreen(3)">BEGIN PRE-FLIGHT CHECKS</button>
+  </section>
+
+
+  <!-- CHECK 1 -->
+  <section class="screen" id="screen3">
+    <div class="tiny">PRE-FLIGHT CHECK 01 / 03</div>
+
+    <h2>ESTIMATED<br>DEPARTURE TIME?</h2>
+
+    <button onclick="answer(4,'onTime')">
+      ON TIME
+    </button>
+
+    <button class="secondary" onclick="answer(4,'mst')">
+      MALCOLM STANDARD TIME<br>
+      <small>DEPENDING ON MOODOFTHEDAY</small>
+    </button>
+  </section>
+
+
+  <!-- RESPONSE 1 -->
+  <section class="screen" id="screen4">
+    <div id="departureResponse"></div>
+
+    <button onclick="nextScreen(5)">CONTINUE</button>
+  </section>
+
+
+  <!-- CHECK 2 -->
+  <section class="screen" id="screen5">
+    <div class="tiny">PRE-FLIGHT CHECK 02 / 03</div>
+
+    <h2>ARE YOU AWARE THAT YOU ARE ANOTHER YEAR OLDER?</h2>
+
+    <button onclick="ageAnswer()">YES</button>
+
+    <button class="secondary" onclick="ageAnswer()">
+      I REFUSE TO ACKNOWLEDGE
+    </button>
+  </section>
+
+
+  <!-- RESPONSE 2 -->
+  <section class="screen" id="screen6">
+    <div class="status">✓ AGE DECLARATION RECORDED</div>
+
+    <p class="system-message">
+      NUMBER OMITTED FOR<br>
+      OPERATIONAL REASONS.
+    </p>
+
+    <button onclick="nextScreen(7)">CONTINUE</button>
+  </section>
+
+
+  <!-- CHECK 3 -->
+  <section class="screen" id="screen7">
+    <div class="tiny">PRE-FLIGHT CHECK 03 / 03</div>
+
+    <h2>DOES FO MALCOLM REQUIRE PRIORITY HANDLING TODAY?</h2>
+
+    <button onclick="handsomeAnswer()">
+      YES COS I'M HANDSOME
+    </button>
+
+    <button class="secondary" onclick="handsomeAnswer()">
+      NO I'M TOO HANDSOME
+    </button>
+  </section>
+
+
+  <!-- RESPONSE 3 -->
+  <section class="screen" id="screen8">
+    <div class="status">✓ HANDSOMENESS CONFIRMED</div>
+
+    <p class="system-message">
+      PRIORITY CLEARANCE APPROVED.
+    </p>
+
+    <button onclick="nextScreen(9)">CONTINUE</button>
+  </section>
+
+
+  <!-- FINAL -->
+  <section class="screen" id="screen9">
+    <div class="tiny">FINAL CLEARANCE</div>
+
+    <h2>FO MALCOLM,</h2>
+
+    <p>ARE YOU READY TO RECEIVE YOUR BIRTHDAY CLEARANCE?</p>
+
+    <button onclick="runChecks()">READY FOR DEPARTURE</button>
+  </section>
+
+
+  <!-- LOADING -->
+  <section class="screen" id="screen10">
+    <div class="tiny">RUNNING FINAL CHECKS</div>
+
+    <div class="checks">
+      <p id="check1">VERIFYING CREW.............</p>
+      <p id="check2">AGE CHECK..................</p>
+      <p id="check3">HANDSOMENESS CHECK.........</p>
+      <p id="check4">PUNCTUALITY................</p>
+    </div>
+  </section>
+
+
+  <!-- CLEARANCE -->
+  <section class="screen" id="screen11">
+
+    <div class="status big">✓ ALL CHECKS COMPLETE</div>
+
+    <p class="tiny">BIRTHDAY CLEARANCE</p>
+
+    <h1 class="granted">GRANTED</h1>
+
+    <div class="line"></div>
+
+    <h2>FO MALCOLM</h2>
+
+    <p class="clearance">CLEARED FOR DEPARTURE ✈</p>
+
+    <div class="destination">
+      <span>DESTINATION</span>
+      <strong>[ CLASSIFIED ]</strong>
+    </div>
+
+    <p>27 OCT 2026</p>
+
+    <button onclick="accessFlightPlan()">OPEN FLIGHT PLAN</button>
+  </section>
+
+<!-- FLIGHT PLAN ACCESS -->
+<section class="screen" id="screen13">
+
+  <div class="tiny">SECURE FLIGHT OPERATIONS</div>
+
+  <h2>ACCESSING CONFIDENTIAL<br>FLIGHT PLAN...</h2>
+
+  <div class="checks">
+    <p id="access1">VERIFYING CLEARANCE.........</p>
+    <p id="access2">DECRYPTING FLIGHT PLAN......</p>
+    <p id="access3">BIRTHDAY MESSAGE............</p>
+  </div>
+
+</section>
+  <!-- MESSAGE -->
+  <section class="screen" id="screen12">
+
+    <div class="tiny">CONFIDENTIAL FLIGHT PLAN</div>
+
+    <h2>FO MALCOLM ✈</h2>
+
+    <div class="birthday-message">
+      <p><strong>Happiesttt Birthday to you! 🎂✈️</strong></p>
+
+      <p>
+        Left out the number cos age doesn’t matter —
+        but yeayy, <strong>pushing 40 already?!</strong> 
+      </p>
+    </div>
+
+    <div class="line"></div>
+
+    <p class="status">FLIGHT PLAN STATUS: ACCEPTED ✓</p>
+
+  </section>
+
+</div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
